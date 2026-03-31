@@ -1,0 +1,15 @@
+[build]
+  publish = "frontend"
+  command = "echo 'No build step needed'"
+
+# Serve all HTML pages directly
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Catch-all: serve all other frontend routes as static files
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 200
