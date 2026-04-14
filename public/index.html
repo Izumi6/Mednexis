@@ -198,19 +198,19 @@
       MedNexis
     </a>
     <div class="nav-links" style="gap: 40px; margin-left: 40px;">
-      <a href="#" style="color: #0f172a; font-weight: 600;">Home</a>
-      <a href="#" style="color: #64748b;">About</a>
-      <a href="#" style="color: #64748b;">Services</a>
-      <a href="#" style="color: #64748b;">Blog</a>
+      <a href="#home" style="color: #0f172a; font-weight: 600;">Home</a>
+      <a href="#about" style="color: #64748b;">About</a>
+      <a href="#services" style="color: #64748b;">Services</a>
+      <a href="#blog" style="color: #64748b;">Blog</a>
     </div>
-    <div style="display: flex; align-items: center; gap: 30px;" id="dynamicNav">
-      <span style="font-weight: 500; color: #475569; font-size: 15px;">+1 (555) 000-0000</span>
-      <a href="login.html" class="btn" style="background: #1e293b; color: white; border-radius: 30px; padding: 12px 28px; width: auto; font-family: 'Inter'; font-size: 14px; box-shadow: none;">Contact us</a>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <a href="login.html" class="btn" style="background: transparent; color: #1e293b; border-radius: 30px; padding: 10px 20px; width: auto; font-family: 'Inter'; font-size: 14px; box-shadow: none; font-weight: 600;">Login</a>
+      <a href="register.html" class="btn" style="background: var(--primary); color: white; border-radius: 30px; padding: 10px 24px; width: auto; font-family: 'Inter'; font-size: 14px; box-shadow: none; font-weight: 600;">Register</a>
     </div>
   </nav>
 
   <!-- Split Grid Layout -->
-  <div class="landing-grid">
+  <div class="landing-grid" id="home">
     
     <!-- Left Copy -->
     <div class="text-column">
@@ -258,22 +258,12 @@
   </div>
 
   <!-- Bottom Section Row (matching reference cutoff images) -->
-  <div class="bottom-section">
-    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800" class="bottom-img" alt="Diagnostics" />
-    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" class="bottom-img" alt="Surgery Prep" />
-    <img src="https://images.unsplash.com/photo-1551076805-e18690c5e53b?auto=format&fit=crop&q=80&w=800" class="bottom-img" alt="Consultation" />
+  <div class="bottom-section" id="services">
+    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=60&w=400" loading="lazy" class="bottom-img" alt="Diagnostics" />
+    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=60&w=400" loading="lazy" class="bottom-img" alt="Surgery Prep" />
+    <img src="https://images.unsplash.com/photo-1551076805-e18690c5e53b?auto=format&fit=crop&q=60&w=400" loading="lazy" class="bottom-img" alt="Consultation" />
   </div>
 
   <script src="js/api.js"></script>
-  <script>
-    // Modify nav slightly if logged in, just replacing the button
-    const token = localStorage.getItem('mednexis_token');
-    const role = localStorage.getItem('mednexis_role');
-    if (token && role) {
-      const nav = document.getElementById('dynamicNav');
-      const dashLink = role === 'Admin' ? 'admin-dashboard.html' : role === 'Doctor' ? 'doctor-dashboard.html' : 'patient-dashboard.html';
-      nav.innerHTML = `<a href="${dashLink}" class="btn" style="background: var(--primary); color: white; border-radius: 30px; padding: 12px 28px; width: auto; font-family: 'Inter'; font-size: 14px;">Dashboard &rarr;</a>`;
-    }
-  </script>
 </body>
 </html>
