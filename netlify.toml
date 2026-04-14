@@ -1,13 +1,7 @@
 [build]
   publish = "frontend"
-  command = "echo 'No build step needed'"
-
-# Proxy all /api/* calls to the Vercel backend
-[[redirects]]
-  from = "/api/*"
-  to = "https://mednexis-gb647bw3x-vakhariyasuyash-5329s-projects.vercel.app/api/:splat"
-  status = 200
-  force = true
+  functions = "netlify/functions"
+  command = "npm install"
 
 # Serve all frontend HTML routes
 [[redirects]]
