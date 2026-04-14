@@ -26,18 +26,14 @@
       font-weight: 800;
       margin-bottom: 24px;
       font-family: 'Outfit', sans-serif;
-      background: linear-gradient(to right, #ffffff, #94a3b8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: var(--text-main);
       line-height: 1.1;
       letter-spacing: -2px;
     }
     .hero h1 span {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent;
     }
@@ -62,42 +58,11 @@
       width: 100%;
       max-width: 600px;
       border-radius: 20px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
-      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-      transition: transform 0.5s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
-    .hero-image img:hover {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
-    
-    .floating-badge {
-      position: absolute;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(12px);
-      padding: 15px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      animation: float 6s infinite ease-in-out alternate;
-    }
-
-    .badge-top { top: 10%; right: -20px; animation-delay: 0s; }
-    .badge-bottom { bottom: 10%; left: -20px; animation-delay: 1s; }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-20px); }
-    }
-
   </style>
 </head>
 <body>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
   <nav class="navbar">
     <a href="index.html" class="logo" style="font-family: 'Outfit'; font-size: 24px; font-weight: 800;">MedNexis<span style="color:var(--primary)">.</span></a>
     <div class="nav-links" id="dynamicNav">
@@ -107,59 +72,42 @@
 
   <div class="hero">
     <div class="hero-content">
-      <div style="display:inline-block; padding:8px 16px; background:rgba(99, 102, 241, 0.1); color:var(--primary); font-weight:600; border-radius:30px; margin-bottom:20px; border:1px solid rgba(99,102,241,0.2);">🚀 MedNexis v2.0 is Live</div>
       <h1>Intelligent Healthcare.<br><span>Zero Friction.</span></h1>
-      <p>Experience the next generation of medical scheduling. Our AI-driven routing instantly matches your symptoms to the world's best specialists while optimizing treatment priorities for doctors.</p>
+      <p>Experience the next generation of medical scheduling. Our smart routing connects your symptoms to the most qualified specialists, accelerating clinical triage.</p>
       <div class="hero-buttons">
         <a href="register.html" class="btn" style="max-width: 200px; text-decoration: none; padding:16px; border-radius: 12px;">Get Started Free</a>
         <a href="login.html" class="btn btn-secondary" style="max-width: 200px; text-decoration: none; padding:16px; border-radius: 12px; background: transparent;">Doctor Portal</a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="/Users/suyash/.gemini/antigravity/brain/babe6f15-6b49-4c60-a99d-180b923783fe/hero_dashboard_mockup_1776191186417.png" alt="MedNexis Dashboard Preview" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000'"/>
-      
-      <div class="floating-badge badge-top">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
-        <div>
-          <div style="font-weight: 600; color: white;">AI Routed</div>
-          <div style="font-size: 12px; color: var(--text-muted);">Assigned to Dr. Neurologist</div>
-        </div>
-      </div>
-
-      <div class="floating-badge badge-bottom">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--danger-bg); color: var(--danger); display: flex; align-items: center; justify-content: center; font-size: 20px;">⚡</div>
-        <div>
-          <div style="font-weight: 600; color: white;">High Priority</div>
-          <div style="font-size: 12px; color: var(--text-muted);">Immediate Attention Required</div>
-        </div>
-      </div>
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" alt="MedNexis Professional Doctor Interface" />
     </div>
   </div>
 
   <div style="position: relative; z-index: 5;">
     <div class="feature-grid">
       <div class="stat-card" style="text-align: left; padding: 40px 30px;">
-        <div class="feature-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">🧭</div>
-        <h3 style="font-size: 24px; margin-bottom: 15px; color: white;">Intelligent Routing</h3>
+        <div class="feature-icon" style="background: rgba(2, 132, 199, 0.1); color: #0284c7;">🧭</div>
+        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-main);">Intelligent Routing</h3>
         <p style="color: var(--text-muted); line-height: 1.7; font-size: 15px;">Don't guess what kind of doctor you need. Input your symptoms, and MedNexis automatically assigns you to the highest quality specialist available.</p>
       </div>
 
       <div class="stat-card" style="text-align: left; padding: 40px 30px;">
-        <div class="feature-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">✨</div>
-        <h3 style="font-size: 24px; margin-bottom: 15px; color: white;">AI Diagnosis</h3>
-        <p style="color: var(--text-muted); line-height: 1.7; font-size: 15px;">Our integrated AI diagnostic tool assists doctors in reviewing patient history and formulating immediate, accurate preliminary diagnoses.</p>
+        <div class="feature-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">✨</div>
+        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-main);">Automated Triage</h3>
+        <p style="color: var(--text-muted); line-height: 1.7; font-size: 15px;">Our automated systems assist doctors in reviewing patient history and formulating immediate, accurate preliminary assessments.</p>
       </div>
 
       <div class="stat-card" style="text-align: left; padding: 40px 30px;">
-        <div class="feature-icon" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">⚡</div>
-        <h3 style="font-size: 24px; margin-bottom: 15px; color: white;">Priority Triaging</h3>
+        <div class="feature-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
+        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-main);">Priority Logic</h3>
         <p style="color: var(--text-muted); line-height: 1.7; font-size: 15px;">Critical cases are never left waiting. Our system calculates health urgency and visually prioritizes high-risk patients on the Doctor Dashboard.</p>
       </div>
     </div>
   </div>
 
-  <footer class="footer" style="background: transparent; border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 20px;">
-    <div style="font-family: 'Outfit'; font-size: 20px; font-weight: 800; color: white; margin-bottom: 10px;">MedNexis<span style="color:var(--primary)">.</span></div>
+  <footer class="footer" style="background: transparent; border-top: 1px solid var(--border); padding: 40px 20px;">
+    <div style="font-family: 'Outfit'; font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">MedNexis<span style="color:var(--primary)">.</span></div>
     <p style="font-size: 14px;">&copy; 2026 MedNexis Healthcare Systems. Proudly built with cutting-edge technology.</p>
   </footer>
 
