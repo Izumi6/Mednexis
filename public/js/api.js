@@ -16,7 +16,13 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
 
   try {
     const response = await fetch(`${API_URL}${endpoint}`, config);
-    const data = await response.json();
+    let data;
+    try {
+      data = await response.json();
+    } catch(err) {
+      if(!response.ok) throw new Error('Server encountered an issue. (Status: ' + response.status + ')');
+      throw new Error('Unexpected response from server');
+    }
     if (!response.ok) {
       throw new Error(data.message || 'Something went wrong');
     }

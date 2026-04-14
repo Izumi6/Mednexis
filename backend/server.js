@@ -29,7 +29,7 @@ app.get('*', (req, res) => {
 });
 
 // Database Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mednexis';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://mednexis:Asmita%40123@cluster0.kmazbaa.mongodb.net/mednexis?appName=Cluster0';
 mongoose.connect(MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
