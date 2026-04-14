@@ -1,4 +1,11 @@
-use mednexis;
+// This file is for MongoDB Shell (mongosh) only.
+// Run with: mongosh < seed.mongo.js
+// Do NOT run with Node.js (node seed.mongo.js) — use backend/seed.js instead.
+
+/* eslint-disable */
+// @ts-nocheck
+
+use("mednexis");
 db.users.deleteMany({});
 db.appointments.deleteMany({});
 db.medicalrecords.deleteMany({});

@@ -1,19 +1,5 @@
 const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-// Map old /api routes to Netlify Functions paths
-function resolveURL(endpoint) {
-  if (isLocal) {
-    return 'http://localhost:5000/api' + endpoint;
-  }
-  // Map: /auth/login -> /.netlify/functions/auth/login
-  // Map: /appointments -> /.netlify/functions/appointments
-  // Map: /records -> /.netlify/functions/records
-  // Map: /ai/suggest -> /.netlify/functions/ai
-  const parts = endpoint.split('/').filter(Boolean); // e.g. ['auth','login']
-  const functionName = parts[0]; // e.g. 'auth'
-  const rest = parts.slice(1).join('/'); // e.g. 'login'
-  return '/.netlify/functions/' + functionName + (rest ? '/' + rest : '');
-}
+const API_URL = isLocal ? 'http://localhost:5000/api' : '/api';
 
 async function fetchAPI(endpoint, method = 'GET', body = null) {
   const token = localStorage.getItem('mednexis_token');
@@ -29,8 +15,7 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
   }
 
   try {
-    const url = resolveURL(endpoint);
-    const response = await fetch(url, config);
+    const response = await fetch(`${API_URL}${endpoint}`, config);
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.message || 'Something went wrong');
@@ -73,4 +58,3 @@ function logout() {
   localStorage.removeItem('mednexis_name');
   window.location.href = 'index.html';
 }
-
